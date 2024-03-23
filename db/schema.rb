@@ -10,17 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_23_120646) do
-  create_table "resumes", force: :cascade do |t|
-    t.string "creator"
-    t.integer "experience"
-    t.string "resume_link"
-    t.string "github_link"
-    t.string "telegram_link"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema[7.1].define(version: 2024_03_23_143825) do
+# Could not dump table "resumes" because of following StandardError
+#   Unknown type 'inreger' for column 'years_of_experience'
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

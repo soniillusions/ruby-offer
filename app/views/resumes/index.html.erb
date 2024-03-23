@@ -1,16 +1,18 @@
 <% @resumes.each do |resume| %>
-  <p><%= resume.creator %></p>
+  <b><%= resume.name %></b>
 
-  <p><%= resume.experience %></p>
-
-  <a><%= resume.resume_link %></a><br />
-  <a><%= resume.github_link %></a><br />
+  <p>
+    Разрабатывает на руби: <%= resume.years_of_experience %> лет и
+    <%= resume.months_of_experience %> месяцев</p>
+  </p><br />
 
   <p><%= resume.body %></p><br />
 
   <p>
     <%= link_to 'Подробнее', users_resume_path(resume), class: 'custom-link' %>
   </p>
+
+  <%#= link_to "Destroy", users_resume_path(@resume), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 
   <hr />
 <% end %>

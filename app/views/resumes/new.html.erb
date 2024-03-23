@@ -16,13 +16,27 @@
   </p>
 
   <p>
-    <%= f.label :experience, "Укажите ваш опыт:" %>
-    <%= f.number_field :experience, class: 'form-control', min: 0, max: 40 %>
+    <%= f.hidden_field :creator_email, value: current_user.email %>
   </p>
 
   <p>
-    <%= f.label :resume_link, "Ссылка на ваше резюме:" %>
-    <%= f.text_field :resume_link, class: 'form-control'%>
+    <%= f.label :name, "Как вас зовут?" %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :years_of_experience, "Укажите ваш опыт в годах:" %>
+    <%= f.number_field :years_of_experience, class: 'form-control', min: 0, max: 40 %>
+  </p>
+
+  <p>
+    <%= f.label :months_of_experience, "Укажите ваш опыт в месяцах:" %>
+    <%= f.number_field :months_of_experience, class: 'form-control', min: 0, max: 12 %>
+  </p>
+
+  <p>
+    <%= f.label :telegram_link, "Telegram link:" %>
+    <%= f.text_field :telegram_link, class: 'form-control'%>
   </p>
 
   <p>

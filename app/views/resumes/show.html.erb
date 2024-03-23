@@ -1,0 +1,24 @@
+
+  <b><%= @resume.name %></b>
+
+  <p>
+    Разрабатывает на руби: <%= @resume.years_of_experience %> лет и
+    <%= @resume.months_of_experience %> месяцев</p>
+  </p>
+
+
+  <a href="<%= @resume.telegram_link %>" target="_blank">
+    <i class="bi bi-telegram"></i>Telegram
+  </a><br />
+
+  <a href="<%= @resume.github_link %>" target="_blank">
+    <i class="bi bi-github black-icon"></i>GitHub
+  </a><br />
+
+  <br />
+
+  <p><%= @resume.body %></p><br />
+
+  <p>
+    <%= link_to "Destroy", users_resume_path(@resume), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  </p>

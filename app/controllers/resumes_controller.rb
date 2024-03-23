@@ -1,6 +1,6 @@
 class ResumesController < ApplicationController
   def index
-    @resumes = Resume.all
+    @resumes = Resume.order(created_at: :desc)
   end
 
   def new
@@ -17,9 +17,20 @@ class ResumesController < ApplicationController
     end
   end
 
+  def show
+    @resume = Resume.find(params[:id])
+  end
+
+  def destroy
+    @resume = Resume.find(params[:id])
+    @resume.destroy
+
+    redirect_to users_resumes_path
+  end
+
   private
 
   def resume_params
-    params.require(:resume).permit(:creator, :experience, :resume_link, :github_link, :body)
+    params.require(:resume).permit(:creator, :creator_email, :name, :years_of_experience, :months_of_experience, :telegram_link, :github_link, :body)
   end
 end
