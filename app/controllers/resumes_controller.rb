@@ -16,4 +16,10 @@ class ResumesController < ApplicationController
       render action: 'new'
     end
   end
+
+  private
+
+  def resume_params
+    params.require(:resume).permit(:creator, :experience, :resume_link, :github_link, :body)
+  end
 end
