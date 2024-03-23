@@ -1,3 +1,18 @@
+<% @resumes.each do |resume| %>
+  <p><%= resume.creator %></p>
 
+  <p><%= resume.experience %></p>
+
+  <a><%= resume.resume_link %></a><br />
+  <a><%= resume.github_link %></a><br />
+
+  <p><%= resume.body %></p><br />
+
+  <p>
+    <%= link_to 'Подробнее', users_resume_path(resume), class: 'custom-link' %>
+  </p>
+
+  <hr />
+<% end %>
 
 
