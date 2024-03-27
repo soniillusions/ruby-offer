@@ -176,3 +176,11 @@
     background-color: darkorange;
     color: white;
 }
+
+.resume-container {
+
+}
+
+select {
+    appearance: auto; /* Или appearance: initial; */
+}

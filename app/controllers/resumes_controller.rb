@@ -1,7 +1,7 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   def index
-    @resumes = Resume.page(params[:page]).per(2).order(created_at: :desc)
+    @resumes = Resume.page(params[:page]).per(3).order(created_at: :desc)
   end
 
   def new
@@ -32,6 +32,6 @@ class ResumesController < ApplicationController
   private
 
   def resume_params
-    params.require(:resume).permit(:creator, :creator_email, :name, :years_of_experience, :months_of_experience, :telegram_link, :github_link, :body)
+    params.require(:resume).permit(:creator, :creator_email, :name, :years_of_experience, :months_of_experience, :telegram_link, :github_link, :body, :title, :city, :salary, :salary_frequency)
   end
 end

@@ -10,13 +10,11 @@
     </div>
 
     <div class="col-10">
+        <b><%= resume.title %></b><br />
 
-        <b><%= resume.name %></b>
+        <i class="bi bi-clock-history"> <%= resume.years_of_experience %> xp</i>
 
-        <p>
-          Разрабатывает на руби: <%= resume.years_of_experience %> лет и
-          <%= resume.months_of_experience %> месяцев</p>
-        </p><br />
+        <i class="bi bi-geo-alt"><%= resume.city %></i>
 
         <p><%= resume.body %></p><br />
 

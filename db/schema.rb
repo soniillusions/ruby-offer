@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_27_185313) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_27_211819) do
   create_table "resume_tags", force: :cascade do |t|
     t.integer "resume_id", null: false
     t.integer "tag_id", null: false

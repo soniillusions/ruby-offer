@@ -15,12 +15,12 @@
       </div>
     </div>
     <div class="col-9" style="padding-top: 10px; padding-bottom: 10px;">
-      <b><%= @resume.name %></b>
+      <b><%= @resume.name %></b><br />
 
-      <p>
-        Разрабатывает на руби: <%= @resume.years_of_experience %> лет и
-        <%= @resume.months_of_experience %> месяцев</p>
-      </p>
+      <i class="bi bi-clock-history"> <%= @resume.years_of_experience %> xp</i>
+
+      <i class="bi bi-geo-alt"><%= @resume.city %></i>
+
     </div>
   </div>
 </div>
