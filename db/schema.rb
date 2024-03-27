@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_23_143825) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_27_185313) do
+  create_table "resume_tags", force: :cascade do |t|
+    t.integer "resume_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resume_id"], name: "index_resume_tags_on_resume_id"
+    t.index ["tag_id"], name: "index_resume_tags_on_tag_id"
+  end
+
 # Could not dump table "resumes" because of following StandardError
 #   Unknown type 'inreger' for column 'years_of_experience'
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +43,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_143825) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "resume_tags", "resumes"
+  add_foreign_key "resume_tags", "tags"
 end
