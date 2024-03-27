@@ -18,6 +18,20 @@
   </head>
 
   <body>
+  <% if notice.present? %>
+    <div class="container-fluid notice-container">
+      <i class="bi bi-exclamation-triangle-fill" style="display: inline-block"></i>
+      <p class="notice" style="color: orange; display: inline-block"><%= notice %></p>
+    </div>
+  <% end %>
+
+  <% if alert.present? %>
+    <div class="container-fluid notice-container">
+      <i class="bi bi-exclamation-triangle-fill" style="display: inline-block"></i>
+      <p class="alert" style="color: darkgoldenrod; display: inline-block"><%= alert %></p>
+    </div>
+  <% end %>
+
   <div class="container">
 
     <nav class="navbar navbar-expand-lg custom-navbar">
@@ -41,7 +55,7 @@
 
           <ul class="navbar-nav ml-auto d-flex align-items-center">
             <% if user_signed_in? %>
-              <li class="nav-item">
+              <li class="nav-item" style="margin-right: 10px">
                 <span><%= current_user.email %></span>
               </li>
               <li class="nav-item">
@@ -56,14 +70,6 @@
         </div>
       </div>
     </nav>
-
-    <% if notice.present? %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-
-    <% if alert.present? %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
 
     <%= yield %>
 

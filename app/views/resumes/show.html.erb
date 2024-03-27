@@ -1,24 +1,56 @@
 
-  <b><%= @resume.name %></b>
+<div class="container custom-margin">
+  <div class="row">
+    <div class="col-1">
+      <%= link_to "Назад", "#", onclick: "history.go(-1); return false;", data: { turbolinks: false } %>
+    </div>
+    <div class="col-11"></div>
+  </div>
 
-  <p>
-    Разрабатывает на руби: <%= @resume.years_of_experience %> лет и
-    <%= @resume.months_of_experience %> месяцев</p>
-  </p>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-2">
+      <div class="profile-picture">
+        <%= image_tag("avatar.png") %>
+      </div>
+    </div>
+    <div class="col-9" style="padding-top: 10px; padding-bottom: 10px;">
+      <b><%= @resume.name %></b>
+
+      <p>
+        Разрабатывает на руби: <%= @resume.years_of_experience %> лет и
+        <%= @resume.months_of_experience %> месяцев</p>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row">
+    <div class="col-1"></div>
+
+    <div class="col-2">
+      <a href="<%= @resume.telegram_link %>" target="_blank">
+        <i class="bi bi-telegram"></i>Telegram
+      </a><br />
+
+      <a href="<%= @resume.github_link %>" target="_blank">
+        <i class="bi bi-github black-icon"></i>GitHub
+      </a><br />
+    </div>
+
+    <div class="col-9 custom-container">
+      <br />
+
+      <p><%= @resume.body %></p><br />
+
+      <p>
+        <%= link_to "Destroy", users_resume_path(@resume), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </p>
+    </div>
+  </div>
+</div>
 
 
-  <a href="<%= @resume.telegram_link %>" target="_blank">
-    <i class="bi bi-telegram"></i>Telegram
-  </a><br />
 
-  <a href="<%= @resume.github_link %>" target="_blank">
-    <i class="bi bi-github black-icon"></i>GitHub
-  </a><br />
 
-  <br />
-
-  <p><%= @resume.body %></p><br />
-
-  <p>
-    <%= link_to "Destroy", users_resume_path(@resume), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  </p>

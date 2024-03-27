@@ -1,20 +1,32 @@
+
+
 <% @resumes.each do |resume| %>
-  <b><%= resume.name %></b>
+<div class="user-container">
+  <div class="row" style="display: flex; align-items: center;">
+    <div class="col-2">
+      <div class="profile-picture">
+        <%= image_tag("avatar.png") %>
+      </div>
+    </div>
 
-  <p>
-    Разрабатывает на руби: <%= resume.years_of_experience %> лет и
-    <%= resume.months_of_experience %> месяцев</p>
-  </p><br />
+    <div class="col-10">
 
-  <p><%= resume.body %></p><br />
+        <b><%= resume.name %></b>
 
-  <p>
-    <%= link_to 'Подробнее', users_resume_path(resume), class: 'custom-link' %>
-  </p>
+        <p>
+          Разрабатывает на руби: <%= resume.years_of_experience %> лет и
+          <%= resume.months_of_experience %> месяцев</p>
+        </p><br />
 
-  <%#= link_to "Destroy", users_resume_path(@resume), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <p><%= resume.body %></p><br />
 
-  <hr />
+        <p>
+          <%= link_to 'Подробнее', users_resume_path(resume), class: 'custom-link' %>
+        </p>
+
+    </div>
+  </div>
+</div>
 <% end %>
 
-
+<%= paginate @resumes, :class => 'pagination' %>

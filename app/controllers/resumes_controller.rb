@@ -1,6 +1,7 @@
 class ResumesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   def index
-    @resumes = Resume.order(created_at: :desc)
+    @resumes = Resume.page(params[:page]).per(2).order(created_at: :desc)
   end
 
   def new

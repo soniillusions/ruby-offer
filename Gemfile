@@ -70,3 +70,4 @@ end
 
 gem "devise"
 gem "validate_url"
+gem "kaminari"
