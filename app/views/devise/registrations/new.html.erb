@@ -30,9 +30,14 @@
           <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
         </div>
 
-        <div class="field" style="margin-bottom: 40px">
+        <div class="field" style="margin-bottom: 20px">
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+        </div>
+
+        <div class="field" style="margin-bottom: 40px">
+          <%= f.label :role, 'Ваша роль' %><br />
+          <%= f.select :role, options_for_select([['Разработчик', 'developer'], ['Работодатель', 'employer']], 'developer'), {}, class: 'form-select' %>
         </div>
 
         <div class="actions">

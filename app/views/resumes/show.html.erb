@@ -15,17 +15,27 @@
       </div>
     </div>
     <div class="col-9" style="padding-top: 10px; padding-bottom: 10px;">
-      <b><%= @resume.name %></b><br />
+      <div class="row">
+        <div class="col">
+          <h1><%= @resume.name %></h1>
+        </div>
+      </div>
 
-      <i class="bi bi-clock-history"> <%= @resume.years_of_experience %> xp</i>
+      <b><%= @resume.title %></b><br />
 
-      <i class="bi bi-geo-alt"><%= @resume.city %></i>
+      <i class="bi bi-clock-history" style="margin-right: 5px"> <%= @resume.years_of_experience %> xp</i>
+
+      <i class="bi bi-geo-alt" style="margin-right: 5px"><%= @resume.city %></i>
+
+      <% if @resume.salary.present? %>
+        <i class="bi bi-wallet2" style="margin-right: 5px"><%= @resume.salary %> ₽/<%= @resume.salary_frequency %></i>
+      <% end %>
 
     </div>
   </div>
 </div>
 
-<div>
+<div class="container">
   <div class="row">
     <div class="col-1"></div>
 
@@ -40,16 +50,24 @@
     </div>
 
     <div class="col-9 custom-container">
-      <br />
 
-      <p><%= @resume.body %></p><br />
+      <p><%= simple_format(@resume.body) %></p><br />
 
-      <p>
-        <%= link_to "Destroy", users_resume_path(@resume), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-      </p>
     </div>
   </div>
+
+  <% if current_user && @resume.creator == current_user.username %>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-9">
+        <p>
+          <%= link_to "Destroy", user_resume_path(@resume), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </p>
+      </div>
+    </div>
+  <% end %>
 </div>
+
 
 
 

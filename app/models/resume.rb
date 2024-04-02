@@ -4,5 +4,10 @@ class Resume < ApplicationRecord
   validates :years_of_experience, presence: true, numericality: { greater_than: -1, less_than: 21 }
   validates :telegram_link, url: true
   validates :github_link, url: true, presence: true
-  validates :body, presence: true, length: { maximum: 1062 }
+  validates :body, presence: true, length: { maximum: 1562 }
+
+  belongs_to :user
+
+  has_many :resume_tags
+  has_many :tags, through: :resume_tags
 end

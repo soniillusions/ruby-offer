@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "home#index"
 
-  resource :users do
-    resources :resumes
+  resources :users do
+    resource :resume
   end
+
+  resources :resumes, only: [:index, :show] # Дополнительный маршрут для списка всех резюме
 end
