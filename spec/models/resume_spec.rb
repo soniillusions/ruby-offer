@@ -12,7 +12,9 @@ describe Resume, type: :model do
     it { should validate_length_of(:title).is_at_most(150) }
     it { should validate_numericality_of(:years_of_experience).is_greater_than(-1).is_less_than(21) }
     it { should validate_length_of(:body).is_at_most(1562) }
+  end
 
+  describe "associations" do
     it { should have_many(:tags)}
     it { should have_many(:resume_tags)}
     it { should belong_to(:user)}
