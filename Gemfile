@@ -71,3 +71,8 @@ end
 gem "devise"
 gem "validate_url"
 gem "kaminari"
+
+group :test, :development do
+  gem "rspec-rails",  "~> 6.0.0"
+  gem 'shoulda-matchers'
+end
