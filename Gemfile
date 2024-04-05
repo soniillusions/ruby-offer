@@ -68,11 +68,14 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "devise"
-gem "validate_url"
-gem "kaminari"
-
 group :test, :development do
   gem "rspec-rails",  "~> 6.0.0"
   gem 'shoulda-matchers'
 end
+
+gem "devise"
+gem "validate_url"
+gem "kaminari"
+gem "factory_bot_rails"
+
+
