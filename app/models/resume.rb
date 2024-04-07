@@ -11,3 +11,4 @@ class Resume < ApplicationRecord
   has_many :resume_tags
   has_many :tags, through: :resume_tags
 end
+

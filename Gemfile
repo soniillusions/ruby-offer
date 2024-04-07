@@ -64,18 +64,19 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
   gem "selenium-webdriver"
+  gem "capybara"
+  gem 'database_cleaner-active_record'
 end
 
 group :test, :development do
   gem "rspec-rails",  "~> 6.0.0"
   gem 'shoulda-matchers'
+  gem "factory_bot_rails"
 end
 
 gem "devise"
 gem "validate_url"
 gem "kaminari"
-gem "factory_bot_rails"
 
 
