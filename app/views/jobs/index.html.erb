@@ -1,0 +1,13 @@
+<% @jobs.each do |job| %>
+  <p>
+    <%= job.title %>
+  </p>
+  <p>
+    <%= job.body %>
+  </p>
+  <p>
+    <%= job.city %>
+  </p>
+
+  <%= link_to 'Подробнее', job_path(job), class: 'custom-link' %>
+<% end %>

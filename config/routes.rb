@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resource :resume
+    resource :job
   end
 
   resources :resumes, only: [:index, :show] # Дополнительный маршрут для списка всех резюме
+  resources :jobs, only: [:index, :show]
 end

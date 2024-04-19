@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<%= root_path %>">Вакансии</a>
+              <a class="nav-link active" aria-current="page" href="<%= jobs_path %>">Вакансии</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="<%= resumes_path %>">Кандидаты</a>
@@ -56,6 +56,12 @@
             <% if current_user && current_user.role == 'developer' && current_user.resume_condition == 1 %>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="<%= edit_user_resume_path(current_user.id) %>">Изменить резюме</a>
+              </li>
+            <% end %>
+
+            <% if current_user && current_user.role == 'employer' %>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href='<%= new_user_job_path(current_user.id) %>'>Разместить вакансию</a>
               </li>
             <% end %>
           </ul>

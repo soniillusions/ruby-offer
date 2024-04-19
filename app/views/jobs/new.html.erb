@@ -1,0 +1,68 @@
+<h2>Create new job:</h2>
+
+<%= form_for :job, url: user_job_path, data: {turbo:false} do |f| %>
+  <% if @job && @job.errors.any? %>
+    <p>
+    <ul>
+      <% @job.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+    </p>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :title, "Название компании: " %>
+          <%= f.text_field :title, class: 'form-control', placeholder: "Название вашей компании" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :city, "Город:" %>
+          <%= f.text_field :city, class: 'form-control', placeholder: "Населенный пункт" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :body, "Описание:" %>
+          <%= f.text_area :city, class: 'form-control', style: 'height:200px' %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :salary, "Сколько будете платить:" %>
+          <%= f.number_field :salary, class: 'form-control', style: 'width: 150px', min: 0, placeholder: "0" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :required_exp, "Требуемый опыт:" %>
+          <%= f.number_field :required_exp, class: 'form-control', style: 'width: 150px', min: 0, placeholder: "0"  %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.submit  "Отправить", class: 'btn btn-primary'  %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
