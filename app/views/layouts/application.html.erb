@@ -59,9 +59,15 @@
               </li>
             <% end %>
 
-            <% if current_user && current_user.role == 'employer' %>
+            <% if current_user && current_user.role == 'employer' && current_user.job.blank? %>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href='<%= new_user_job_path(current_user.id) %>'>Разместить вакансию</a>
+              </li>
+            <% end %>
+
+            <% if current_user && current_user.role == 'employer' && current_user.job.present? %>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="<%= edit_user_job_path(current_user.id) %>">Изменить вакансию</a>
               </li>
             <% end %>
           </ul>

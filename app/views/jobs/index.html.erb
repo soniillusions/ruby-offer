@@ -1,13 +1,44 @@
-<% @jobs.each do |job| %>
-  <p>
-    <%= job.title %>
-  </p>
-  <p>
-    <%= job.body %>
-  </p>
-  <p>
-    <%= job.city %>
-  </p>
 
-  <%= link_to 'Подробнее', job_path(job), class: 'custom-link' %>
-<% end %>
+<div class="user-container">
+  <div class="row">
+    <div class="col-2">
+      <div class="profile-picture" style="margin-top: 20px; margin-left: 20px">
+        <%= image_tag("job.png") %>
+      </div>
+    </div>
+
+    <div class="col-10">
+      <% @jobs.each do |job| %>
+
+        <div class="row">
+          <div class="col">
+            <b><%= job.title %></b>
+          </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 20px">
+          <div class="col">
+            <i class="bi bi-clock-history" style="margin-right: 5px"> <%= job.required_exp %> xp</i>
+
+            <% if job.city.present? %>
+              <i class="bi bi-geo-alt" style="margin-right: 5px"><%= job.city %></i>
+            <% end %>
+
+            <% if job.salary.present? %>
+              <i class="bi bi-wallet2" style="margin-right: 5px"><%= job.salary %> $</i>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row" style="margin-right: auto">
+          <div class="col">
+            <p><%= job.body %></p><br />
+          </div>
+        </div>
+
+        <%= link_to 'Подробнее', job_path(job), class: 'custom-link' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
