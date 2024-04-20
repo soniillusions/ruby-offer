@@ -1,11 +1,47 @@
 
-<p>
- <%= @job.title %>
-</p>
+<div class="container custom-margin">
+  <div class="row">
+    <div class="col-1">
+      <%= link_to "Назад", "#", onclick: "history.go(-1); return false;", data: { turbolinks: false } %>
+    </div>
+    <div class="col-11"></div>
+  </div>
 
-<p>
-  <%= @job.body %>
-</p>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-2">
+      <div class="profile-picture">
+        <%= image_tag("job.png") %>
+      </div>
+    </div>
+    <div class="col-9" style="padding-top: 10px; padding-bottom: 10px;">
 
-<%= link_to 'Edit', edit_user_job_path(@job) %>
-<%= link_to 'Destroy', user_job_path(@job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <div class="row">
+        <div class="col">
+          <h1>
+            <%= @job.title %>
+          </h1>
+        </div>
+      </div>
+
+      <i class="bi bi-clock-history" style="margin-right: 5px"> <%= @job.required_exp %> xp</i>
+
+      <i class="bi bi-geo-alt" style="margin-right: 5px"><%= @job.city %></i>
+
+      <% if @job.salary.present? %>
+        <i class="bi bi-wallet2" style="margin-right: 5px"><%= @job.salary %> $</i>
+      <% end %>
+
+
+
+
+      <p>
+        <%= simple_format(@job.body) %>
+      </p>
+
+      <%= link_to 'Edit', edit_user_job_path(@job) %>
+      <%= link_to 'Destroy', user_job_path(@job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>
+
