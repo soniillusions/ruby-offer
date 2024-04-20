@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    @jobs = Job.all
+    @jobs = Job.page(params[:page]).per(3).order(created_at: :desc)
   end
 
   def new

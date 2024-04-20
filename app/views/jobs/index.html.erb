@@ -1,4 +1,4 @@
-
+<% @jobs.each do |job| %>
 <div class="user-container">
   <div class="row">
     <div class="col-2">
@@ -8,37 +8,44 @@
     </div>
 
     <div class="col-10">
-      <% @jobs.each do |job| %>
-
-        <div class="row">
-          <div class="col">
-            <b><%= job.title %></b>
-          </div>
+      <div class="row">
+        <div class="col">
+          <b><%= job.title %></b>
         </div>
+      </div>
 
-        <div class="row" style="margin-bottom: 20px">
-          <div class="col">
-            <i class="bi bi-clock-history" style="margin-right: 5px"> <%= job.required_exp %> xp</i>
+      <div class="row" style="margin-bottom: 20px">
+        <div class="col">
+          <i class="bi bi-clock-history" style="margin-right: 5px"> <%= job.required_exp %> xp</i>
 
-            <% if job.city.present? %>
-              <i class="bi bi-geo-alt" style="margin-right: 5px"><%= job.city %></i>
-            <% end %>
+          <% if job.city.present? %>
+            <i class="bi bi-geo-alt" style="margin-right: 5px"><%= job.city %></i>
+          <% end %>
 
-            <% if job.salary.present? %>
-              <i class="bi bi-wallet2" style="margin-right: 5px"><%= job.salary %> $</i>
-            <% end %>
-          </div>
+          <% if job.salary.present? %>
+            <i class="bi bi-wallet2" style="margin-right: 5px"><%= job.salary %> $</i>
+          <% end %>
         </div>
+      </div>
 
-        <div class="row" style="margin-right: auto">
-          <div class="col">
-            <p><%= job.body %></p><br />
-          </div>
+      <div class="row" style="margin-right: auto">
+        <div class="col">
+          <p><%= job.body %></p><br />
         </div>
+      </div>
 
-        <%= link_to 'Подробнее', job_path(job), class: 'custom-link' %>
-      <% end %>
+      <div class="row">
+        <div class="col">
+          <p>
+            <%= link_to 'Подробнее', job_path(job), class: 'custom-link' %>
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
+<% end %>
+
+<%= paginate @jobs, :class => 'pagination' %>
 

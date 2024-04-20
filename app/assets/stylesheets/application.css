@@ -197,3 +197,18 @@
 select {
     appearance: auto; /* Или appearance: initial; */
 }
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    min-height: calc(100% - 60px); /* Высота всего экрана минус высота футера */
+}
+
+footer {
+    height: 60px; /* Задаем высоту футера */
+    text-align: center;
+    padding: 10px;
+}
+
