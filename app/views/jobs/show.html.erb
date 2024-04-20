@@ -31,13 +31,18 @@
       <% if @job.salary.present? %>
         <i class="bi bi-wallet2" style="margin-right: 5px"><%= @job.salary %> $</i>
       <% end %>
+    </div>
 
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-2"></div>
 
+          <div class="col-9 custom-container">
 
+            <p><%= simple_format(@job.body) %></p><br />
 
-      <p>
-        <%= simple_format(@job.body) %>
-      </p>
+          </div>
+        </div>
 
       <%= link_to 'Edit', edit_user_job_path(@job) %>
       <%= link_to 'Destroy', user_job_path(@job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
