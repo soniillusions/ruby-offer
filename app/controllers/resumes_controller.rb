@@ -47,7 +47,7 @@ class ResumesController < ApplicationController
       current_user.resume_condition = 0
       current_user.save
     end
-    redirect_to users_resumes_path
+    redirect_to resumes_path
   end
 
   private

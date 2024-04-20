@@ -182,7 +182,8 @@
     padding: 35px; /* Дополнительный отступ внутри контейнера, чтобы содержимое не примыкало к рамке */
     width: 1000px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .resume-container-2 {
