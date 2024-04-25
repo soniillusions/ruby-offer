@@ -199,7 +199,8 @@ select {
     appearance: auto; /* Или appearance: initial; */
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -218,3 +219,4 @@ footer {
     overflow: auto; /* Обеспечивает появление полос прокрутки, если содержимое textarea больше, чем размер элемента */
     max-height: 500px;
 }
+

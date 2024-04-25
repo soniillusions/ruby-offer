@@ -1,0 +1,106 @@
+<%= render 'shared/errors', object: @resume %>
+
+<%= form_for :resume, url: user_resume_path, data: {turbo:false} do |f| %>
+
+
+  <p>
+    <%= f.hidden_field :creator, value: current_user.username %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :creator_email, value: current_user.email %>
+  </p>
+
+  <div class="resume-container">
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :title, "Заголовок:" %>
+          <%= f.text_field :title, class: 'form-control', placeholder: "Придумайте заголовок / опишите себя как-нибудь" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :name, "Представтесь:" %>
+          <%= f.text_field :name, class: 'form-control', placeholder: "Имя Фамилия (можно просто имя)" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :city, "Город:" %>
+          <%= f.text_field :city, class: 'form-control', placeholder: "Где вы проживаете (не обязательно)" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :years_of_experience, "Опыт работы ( сколько лет):" %>
+          <%= f.number_field :years_of_experience, class: 'form-control', style: 'width: 100px', min: 0, max: 20, placeholder: "0"%>
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row d-flex align-items-center">
+      <div class="form-group col-2">
+        <p>
+          <%= f.label :salary, "Зарплата:" %>
+          <%= f.number_field :salary, class: 'form-control', style: 'width: 150px', min: 0, placeholder: "0"%>
+        </p>
+      </div>
+
+      <div class="form-group col-2">
+        <p>
+          <%= f.label :salary_frequency, "Срок выплаты:" %>
+          <%= f.select :salary_frequency, [['час', 'hourly'], ['месяц', 'monthly']], { selected: 'месяц' }, { class: 'form-control' } %>
+        </p>
+      </div>
+      <div class="form-group col-8"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :telegram_link, "Telegram link:" %>
+          <%= f.text_field :telegram_link, class: 'form-control', placeholder: "Telegram для связи (не обязательно)" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :github_link, "GitHub link:" %>
+          <%= f.text_field :github_link, class: 'form-control', placeholder: "Ссылка на ваш профиль github"%>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.label :body, "О себе:"%>
+          <%= f.text_area :body, class: 'form-control resizable', style: 'min-height:200px', placeholder: "Постарайтесь заинтересовать работодателя" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>
+          <%= f.submit  "Отправить", class: 'btn btn-primary'  %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+
