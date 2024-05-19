@@ -1,5 +1,11 @@
+# frozen_string_literal: true
+
 class ResumeChangeColumnBody < ActiveRecord::Migration[7.1]
-  def change
-    change_column :resumes, :body,  :text
+  def up
+    change_column :resumes, :body, :text
+  end
+
+  def down
+    change_column :resumes, :body, :string
   end
 end

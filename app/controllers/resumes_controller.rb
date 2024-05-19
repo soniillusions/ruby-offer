@@ -1,38 +1,41 @@
+# frozen_string_literal: true
+
 class ResumesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   def index
     @resumes = Resume.page(params[:page]).per(3).order(created_at: :desc)
   end
 
-  def new
-    @resume = current_user.resume
-  end
-
-  def create
-    @resume = current_user.build_resume(resume_params.except(:tags))
-
-    if @resume.save
-      current_user.resume_condition = 1
-      current_user.save
-      render action: 'confirmed'
-    else
-      render action: 'new'
-    end
-  end
-
   def show
     @resume = Resume.find(params[:id])
+  end
+
+  def new
+    @resume = current_user.resume
   end
 
   def edit
     @resume = current_user.resume
   end
 
+  def create
+    @resume = current_user.build_resume(resume_params)
+
+    if @resume.save
+      current_user.resume_condition = 1
+      current_user.save
+      redirect_to @resume
+    else
+      render action: 'new'
+    end
+  end
+
   def update
     @resume = current_user.resume
 
     if @resume.update(resume_params)
-      redirect_to @resume, notice: 'Resume was successfully updated.'
+      flash[:success] = t('flash.success.resume_update')
+      redirect_to edit_user_resume_path(current_user.id)
     else
       render action: 'edit'
     end
@@ -53,6 +56,10 @@ class ResumesController < ApplicationController
   private
 
   def resume_params
-    params.require(:resume).permit(:creator, :creator_email, :name, :years_of_experience, :months_of_experience, :telegram_link, :github_link, :body, :title, :city, :salary, :salary_frequency, :tags, :resume_condition, :user_id)
+    params.require(:resume).permit(
+      :creator, :creator_email, :name, :years_of_experience, :months_of_experience, :telegram_link,
+      :github_link, :body, :title, :city, :salary, :salary_frequency, :all_tags, :resume_condition,
+      :user_id
+    )
   end
 end
