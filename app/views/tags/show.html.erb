@@ -1,0 +1,54 @@
+Поиск по тегу: <span class="badge bg-primary mb-3"><%= @tag.name %></span>
+
+<% if @tag.resumes.empty? %>
+  <h2>Резюме нет</h2>
+<% else %>
+  <% @tag.resumes.each do |resume| %>
+    <div class="user-container">
+      <div class="row">
+        <div class="col-2">
+          <div class="profile-picture" style="margin-top: 20px; margin-left: 20px">
+            <%= image_tag("avatar.png") %>
+          </div>
+        </div>
+
+        <div class="col-10">
+          <div class="row">
+            <div class="col">
+              <b><%= resume.title %></b><br />
+            </div>
+          </div>
+
+          <div class="row" style="margin-bottom: 20px">
+            <div class="col">
+              <i class="bi bi-clock-history" style="margin-right: 5px"> <%= resume.years_of_experience %> xp</i>
+
+              <% if resume.city.present? %>
+                <i class="bi bi-geo-alt" style="margin-right: 5px"><%= resume.city %></i>
+              <% end %>
+
+              <% if resume.salary.present? %>
+                <i class="bi bi-wallet2" style="margin-right: 5px"><%= resume.salary %> ₽/<%= resume.salary_frequency %></i>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row" style="margin-right: auto">
+            <div class="col">
+              <p><%= resume.body %></p><br />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                <%= link_to 'Подробнее', resume_path(resume), class: 'custom-link' %>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,6 +1,6 @@
 <%= render 'shared/errors', object: @resume %>
 
-<%= form_for :resume, url: user_resume_path, data: {turbo:false} do |f| %>
+<%= form_for :resume, url: user_resume_path, data: {turbo:false}, class: 'resume-form' do |f| %>
 
 
   <p>
@@ -90,6 +90,12 @@
           <%= f.text_area :body, class: 'form-control resizable', style: 'min-height:200px', placeholder: "Постарайтесь заинтересовать работодателя" %>
         </p>
       </div>
+    </div>
+
+    <!-- Поле для ввода тегов -->
+    <div class="field mb-3">
+      <%= f.label :all_tags, "Tags" %>
+      <%= f.text_field :all_tags, class: 'form-control' %>
     </div>
 
     <div class="row">

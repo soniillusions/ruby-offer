@@ -4,7 +4,7 @@
 <div class="resume-container">
   <div class="row">
     <div class="col">
-      <% if current_user && @resume.creator == current_user.username %>
+      <% if current_user && @resume && @resume.creator == current_user.username %>
         <%= link_to "Удалить резюме", user_resume_path(@resume), class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Вы уверены?" } %>
       <% end %>
     </div>
