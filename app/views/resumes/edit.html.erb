@@ -1,13 +1,12 @@
-<% currently_at t('menu.resumes') %>
+<% currently_at t('menu.edit_resume') %>
 <%= render 'form' %>
 
-<div class="resume-container">
-  <div class="row">
-    <div class="col">
-      <% if current_user && @resume && @resume.creator == current_user.username %>
-        <%= link_to "Удалить резюме", user_resume_path(@resume), class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Вы уверены?" } %>
-      <% end %>
+<% if current_user && @resume && @resume.creator == current_user.username %>
+  <div class="resume-container">
+    <div class="row">
+      <div class="col">
+          <%= link_to "Удалить резюме", user_resume_path(@resume), class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Вы уверены?" } %>
+      </div>
     </div>
   </div>
-</div>
-
+<% end %>

@@ -34,7 +34,10 @@ en:
   menu:
     jobs: Jobs
     resumes: Resumes
+    new_resume: New resume
+    new_job: New job
     edit_resume: Edit resume
+    edit_job: Edit job
     sign_up: Sign Up
     log_in: Log In
     log_out: Log Out

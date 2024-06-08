@@ -1,3 +1,5 @@
+<% currently_at t('menu.edit_job') %>
+
 <h2>Edit job:</h2>
 
 <%= form_with model: current_user.job, method: :put, url: user_job_path(current_user) do |f| %>

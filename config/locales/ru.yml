@@ -5,7 +5,10 @@ ru:
   menu:
     jobs: Вакансии
     resumes: Резюме
+    new_resume: Новое резюме
+    new_job: Новая вакансия
     edit_resume: Изменить резюме
+    edit_job: Изменить вакансию
     sign_up: Регистрация
     log_in: Войти
     log_out: Выйти

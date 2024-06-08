@@ -8,28 +8,20 @@
           <li><%= nav_tab t('menu.resumes'), resumes_path, class: 'nav-link px-2', current_page: current_page %></li>
 
 
-          <% if current_user && current_user.role == 'developer' && current_user.resume == false %>
-            <li class="nav-item">
-              <a class="nav-link px-2'" aria-current="page" href="<%= new_user_resume_path(current_user.id) %>">Разместить резюме</a>
-            </li>
+          <% if current_user && current_user.role == 'developer' && !current_user.resume.present? %>
+            <li><%= nav_tab t('menu.new_resume'), new_user_resume_path(current_user.id), class: 'nav-link px-2', current_page: current_page %></li>
           <% end %>
 
-          <% if current_user && current_user.role == 'developer' && current_user.resume == true %>
-            <li class="nav-item">
-              <a class="nav-link px-2'" aria-current="page" href="<%= edit_user_resume_path(current_user.id) %>"><%= t('menu.edit_resume') %></a>
-            </li>
+          <% if current_user && current_user.role == 'developer' && current_user.resume.present? %>
+            <li><%= nav_tab t('menu.edit_resume'), edit_user_resume_path(current_user.id), class: 'nav-link px-2', current_page: current_page %></li>
           <% end %>
 
           <% if current_user && current_user.role == 'employer' && current_user.job.blank? %>
-            <li class="nav-item">
-              <a class="nav-link px-2'" aria-current="page" href='<%= new_user_job_path(current_user.id) %>'>Разместить вакансию</a>
-            </li>
+            <li><%= nav_tab t('menu.new_job'), new_user_job_path(current_user.id), class: 'nav-link px-2', current_page: current_page %></li>
           <% end %>
 
           <% if current_user && current_user.role == 'employer' && current_user.job.present? %>
-            <li class="nav-item">
-              <a class="nav-link px-2'" aria-current="page" href="<%= edit_user_job_path(current_user.id) %>"><%= t('menu.edit_resume') %></a>
-            </li>
+            <li><%= nav_tab t('menu.edit_job'), edit_user_job_path(current_user.id), class: 'nav-link px-2', current_page: current_page %></li>
           <% end %>
         </ul>
 
