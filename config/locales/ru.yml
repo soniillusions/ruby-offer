@@ -2,6 +2,61 @@ ru:
   en: Английский
   ru: Русский
 
+  activerecord:
+    attributes:
+      resume:
+        period:
+          hourly: "час"
+          monthly: "месяц"
+
+  pages:
+    resumes:
+      index:
+        show_more: Подробнее
+      show:
+        back: Назад
+      edit:
+        title: Изменить резюме
+        delete: Удалить
+        resume_title: Заголовок
+        name: Имя
+        city: Город
+        experience: Опыт работы ( сколько лет)
+        salary: Зарплата
+        period: Период
+        hour: Час
+        month: Месяц
+        telegram_link: Ссылка на ваш телеграмм
+        github_link: Ссылка на профиль GitHub
+        about: О себе
+        tags: Теги
+        send: Отправить
+    jobs:
+      index:
+        show_more: Подробнее
+      show:
+        back: Назад
+      edit:
+        title: Изменить вакансию
+        delete: Удалить
+        company_name: Название компании
+        city: Город
+        description: Описание
+        salary: Зарплата
+        experience: Требуемый опыт
+        send: Отправить
+    users:
+      edit:
+        title: Изменить профиль
+        email: Электронная почта
+        username: Имя пользователя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        current_password: Текущий пароль
+        update: Обновить
+        cancel_my_account: Удалить аккаунт
+        account_actions: Действия с аккаунтом
+
   menu:
     jobs: Вакансии
     resumes: Резюме
@@ -12,6 +67,7 @@ ru:
     sign_up: Регистрация
     log_in: Войти
     log_out: Выйти
+    edit_profile: Изменить профиль
 
   hello: "Hello world"
 

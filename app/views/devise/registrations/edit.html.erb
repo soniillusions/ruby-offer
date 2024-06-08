@@ -1,7 +1,7 @@
 <% currently_at 'Edit profile' %>
 
   <div class="resume-container">
-    <h2>Edit profile</h2>
+    <h2><%= t('pages.users.edit.title') %></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -10,7 +10,7 @@
       <div class="col-12">
         <p>
           <div class="field">
-            <%= f.label :email %><br />
+            <%= f.label t('pages.users.edit.email') %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control mb-2' %>
           </div>
 
@@ -25,7 +25,7 @@
       <div class="col-12">
         <p>
           <div class="field">
-            <%= f.label :username %> <i>(leave blank if you don't want to change it)</i><br />
+            <%= f.label t('pages.users.edit.username')%> <i>(leave blank if you don't want to change it)</i><br />
             <%= f.text_field :username, class: 'form-control mb-2' %>
           </div>
         </p>
@@ -36,7 +36,7 @@
       <div class="col-12">
         <p>
         <div class="field">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.label t('pages.users.edit.password')%> <i>(leave blank if you don't want to change it)</i><br />
           <%= f.password_field :password, autocomplete: "new-password", class: 'form-control mb-2' %>
         </div>
         </p>
@@ -47,7 +47,7 @@
       <div class="col-12">
         <p>
         <div class="field">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label t('pages.users.edit.password_confirmation') %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-2' %>
         </div>
         </p>
@@ -58,7 +58,7 @@
       <div class="col-12">
         <p>
         <div class="field">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.label t('pages.users.edit.current_password') %> <i>(we need your current password to confirm your changes)</i><br />
           <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control mb-2' %>
         </div>
         </p>
@@ -69,7 +69,7 @@
       <div class="col-12">
         <p>
         <div class="actions">
-          <%= f.submit "Update", class: 'btn btn-lg btn-secondary' %>
+          <%= f.submit t('pages.users.edit.update'), class: 'btn btn-lg btn-secondary' %>
         </div>
         </p>
       </div>
@@ -77,7 +77,7 @@
 
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3><%= t('pages.users.edit.account_actions') %></h3>
 
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></div>
+<div><%= button_to t('pages.users.edit.cancel_my_account'), registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></div>
 

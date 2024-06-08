@@ -12,10 +12,12 @@
   </p>
 
   <div class="resume-container">
+    <h2><%= t('menu.edit_resume') %></h2>
+
     <div class="row">
       <div class="col-12">
         <p>
-          <%= f.label :title, "Заголовок:" %>
+          <%= f.label t('pages.resumes.edit.resume_title') %>
           <%= f.text_field :title, class: 'form-control', placeholder: "Придумайте заголовок / опишите себя как-нибудь" %>
         </p>
       </div>
@@ -24,7 +26,7 @@
     <div class="row">
       <div class="col-12">
         <p>
-          <%= f.label :name, "Представтесь:" %>
+          <%= f.label t('pages.resumes.edit.name') %>
           <%= f.text_field :name, class: 'form-control', placeholder: "Имя Фамилия (можно просто имя)" %>
         </p>
       </div>
@@ -33,7 +35,7 @@
     <div class="row">
       <div class="col-12">
         <p>
-          <%= f.label :city, "Город:" %>
+          <%= f.label t('pages.resumes.edit.city') %>
           <%= f.text_field :city, class: 'form-control', placeholder: "Где вы проживаете (не обязательно)" %>
         </p>
       </div>
@@ -42,7 +44,7 @@
     <div class="row">
       <div class="col-12">
         <p>
-          <%= f.label :years_of_experience, "Опыт работы ( сколько лет):" %>
+          <%= f.label t('pages.resumes.edit.experience') %>
           <%= f.number_field :years_of_experience, class: 'form-control', style: 'width: 100px', min: 0, max: 20, placeholder: "0"%>
         </p>
       </div>
@@ -51,15 +53,15 @@
     <div class="form-row d-flex align-items-center">
       <div class="form-group col-2">
         <p>
-          <%= f.label :salary, "Зарплата:" %>
+          <%= f.label t('pages.resumes.edit.salary') %>
           <%= f.number_field :salary, class: 'form-control', style: 'width: 150px', min: 0, placeholder: "0"%>
         </p>
       </div>
 
       <div class="form-group col-2">
         <p>
-          <%= f.label :salary_frequency, "Срок выплаты:" %>
-          <%= f.select :salary_frequency, [['час', 'hourly'], ['месяц', 'monthly']], { selected: 'месяц' }, { class: 'form-control' } %>
+          <%= f.label t('pages.resumes.edit.period') %>
+          <%= f.select :salary_frequency, [[I18n.t('activerecord.attributes.resume.period.hourly'), 'hourly'], [I18n.t('activerecord.attributes.resume.period.monthly'), 'monthly']], { selected: 'monthly' }, { class: 'form-control' } %>
         </p>
       </div>
       <div class="form-group col-8"></div>
@@ -68,7 +70,7 @@
     <div class="row">
       <div class="col-12">
         <p>
-          <%= f.label :telegram_link, "Telegram link:" %>
+          <%= f.label t('pages.resumes.edit.telegram_link') %>
           <%= f.text_field :telegram_link, class: 'form-control', placeholder: "Telegram для связи (не обязательно)" %>
         </p>
       </div>
@@ -77,7 +79,7 @@
     <div class="row">
       <div class="col-12">
         <p>
-          <%= f.label :github_link, "GitHub link:" %>
+          <%= f.label t('pages.resumes.edit.github_link') %>
           <%= f.text_field :github_link, class: 'form-control', placeholder: "Ссылка на ваш профиль github"%>
         </p>
       </div>
@@ -86,7 +88,7 @@
     <div class="row">
       <div class="col-12">
         <p>
-          <%= f.label :body, "О себе:"%>
+          <%= f.label t('pages.resumes.edit.about') %>
           <%= f.text_area :body, class: 'form-control resizable', style: 'min-height:200px', placeholder: "Постарайтесь заинтересовать работодателя" %>
         </p>
       </div>
@@ -94,14 +96,14 @@
 
     <!-- Поле для ввода тегов -->
     <div class="field mb-3">
-      <%= f.label :all_tags, "Tags" %>
+      <%= f.label t('pages.resumes.edit.tags') %>
       <%= f.text_field :all_tags, class: 'form-control' %>
     </div>
 
     <div class="row">
       <div class="col-12">
         <p>
-          <%= f.submit  "Отправить", class: 'btn btn-primary'  %>
+          <%= f.submit t('pages.resumes.edit.send'), class: 'btn btn-primary'  %>
         </p>
       </div>
     </div>

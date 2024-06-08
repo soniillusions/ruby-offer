@@ -5,7 +5,7 @@
   <div class="resume-container">
     <div class="row">
       <div class="col">
-          <%= link_to "Удалить резюме", user_resume_path(@resume), class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Вы уверены?" } %>
+          <%= link_to t('pages.resumes.edit.delete'), user_resume_path(@resume), class: "text-danger", data: { turbo_method: :delete, turbo_confirm: "Вы уверены?" } %>
       </div>
     </div>
   </div>

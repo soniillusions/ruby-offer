@@ -31,6 +31,59 @@ en:
   en: English
   ru: Russian
 
+  activerecord:
+    attributes:
+      resume:
+        period:
+          hourly: "hour"
+          monthly: "month"
+
+  pages:
+    resumes:
+      index:
+        show_more: Show more
+      show:
+        back: Back
+      edit:
+        title: Edit resume
+        delete: Delete
+        resume_title: Title
+        name: Name
+        city: City
+        experience: Experience (years)
+        salary: Salary
+        period: Period
+        telegram_link: Telegram link
+        github_link: Github link
+        about: About
+        tags: Tags
+        send: Send
+    jobs:
+      index:
+        show_more: Show more
+      show:
+        back: Back
+      edit:
+        title: Edit job
+        delete: Delete
+        company_name: Company name
+        city: City
+        description: Description
+        salary: Salary
+        experience: Required experience
+        send: Send
+    users:
+      edit:
+        title: Edit profile
+        email: Email
+        username: Username
+        password: Password
+        password_confirmation: Password confirmation
+        current_password: Current password
+        update: Update
+        cancel_my_account: Delete account
+        account_actions: Account actions
+
   menu:
     jobs: Jobs
     resumes: Resumes
@@ -41,6 +94,7 @@ en:
     sign_up: Sign Up
     log_in: Log In
     log_out: Log Out
+    edit_profile: Edit profile
 
   hello: "Hello world"
 
