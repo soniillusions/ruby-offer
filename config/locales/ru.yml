@@ -1,4 +1,4 @@
-en:
+ru:
   en: Английский
   ru: Русский
 
@@ -6,6 +6,9 @@ en:
     jobs: Вакансии
     resumes: Резюме
     edit_resume: Изменить резюме
+    sign_up: Регистрация
+    log_in: Войти
+    log_out: Выйти
 
   hello: "Hello world"
 

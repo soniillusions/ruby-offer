@@ -24,21 +24,6 @@
   </head>
 
   <body>
-
-  <% if notice.present? %>
-    <div class="container-fluid notice-container">
-      <i class="bi bi-exclamation-triangle-fill" style="display: inline-block"></i>
-      <p class="notice" style="color: orange; display: inline-block"><%= notice %></p>
-    </div>
-  <% end %>
-
-  <% if alert.present? %>
-    <div class="container-fluid notice-container">
-      <i class="bi bi-exclamation-triangle-fill" style="display: inline-block"></i>
-      <p class="alert" style="color: darkgoldenrod; display: inline-block"><%= alert %></p>
-    </div>
-  <% end %>
-
   <div class="container">
     <%= yield :main_menu %>
 

@@ -35,6 +35,9 @@ en:
     jobs: Jobs
     resumes: Resumes
     edit_resume: Edit resume
+    sign_up: Sign Up
+    log_in: Log In
+    log_out: Log Out
 
   hello: "Hello world"
 
