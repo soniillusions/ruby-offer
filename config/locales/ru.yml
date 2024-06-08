@@ -1,0 +1,18 @@
+en:
+  en: Английский
+  ru: Русский
+
+  menu:
+    jobs: Вакансии
+    resumes: Резюме
+    edit_resume: Изменить резюме
+
+  hello: "Hello world"
+
+  resumes:
+    confirmed: "Спасибо, ваше резюме отправлено на проверку. В скором времени оно появится на странице 'Кандидаты'"
+
+  flash:
+    success:
+      resume_update: 'Resume successfully updated'
+      job_update: 'Job was successfully updated.'

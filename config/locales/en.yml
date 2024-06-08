@@ -28,13 +28,20 @@
 #       enabled: "ON"
 
 en:
+  en: English
+  ru: Russian
+
+  menu:
+    jobs: Jobs
+    resumes: Resumes
+    edit_resume: Edit resume
+
   hello: "Hello world"
 
   resumes:
-    confirmed: "Спасибо, ваше резюме отправлено на проверку. В скором времени оно появится на странице 'Кандидаты'"
+    confirmed: "thank you, your resume has been sent for verification. It will appear on the 'Candidates' page shortly"
 
   flash:
     success:
       resume_update: 'Resume successfully updated'
       job_update: 'Job was successfully updated.'
-

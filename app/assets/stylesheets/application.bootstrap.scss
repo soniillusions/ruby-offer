@@ -1,0 +1,260 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.container-tags {
+  width: 60%;
+  margin: 0px;
+}
+
+.tag-container {
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-container .tag {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  background: #f2f2f2;
+  cursor: default;
+}
+
+
+
+.tag i {
+  font-size: 16px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.tag span {
+  margin-right: 5px;
+}
+
+.tag-container input {
+  flex: 1;
+  font-size: 16px;
+  padding: 5px;
+  outline: none;
+  border: 0;
+}
+
+.navbar {
+  margin-bottom: 10px; /* Добавляем отступ сверху */
+}
+
+.link-icon {
+  width: 32px;
+  height: auto;
+}
+
+.black-icon {
+  color: black;
+}
+
+.custom-color {
+  background-color: orange;
+}
+
+.custom-navbar {
+  background-color: white;
+}
+
+.btn-custom-size {
+  margin-left: auto;
+  margin-right: auto;
+  width: 170px;
+  height: 50px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.profile-picture {
+  width: 150px; /* Установите ширину и высоту, соответствующую размеру круглой картинки */
+  height: 150px;
+  border-radius: 50%; /* Это свойство делает картинку круглой */
+  overflow: hidden; /* Это свойство обрезает лишнее содержимое изображения за пределами границ контейнера */
+}
+
+.profile-picture img {
+  width: 100%; /* Заполните всю доступную ширину контейнера */
+  height: auto; /* Поддерживайте пропорциональное изменение размера */
+}
+
+.user-container {
+  /*border: 1px solid #000; !* Толщина, тип и цвет рамки *!*/
+  border-radius: 10px; /* Радиус скругления углов */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет тени */
+  padding: 10px; /* Дополнительный отступ внутри контейнера, чтобы содержимое не примыкало к рамке */
+  height: 225px;
+  max-width: 1500px;
+  margin-bottom: 20px;
+}
+
+.user-container .col-10 p {
+  white-space: nowrap; /* Запрет переноса строк */
+  overflow: hidden; /* Скрытие части текста, которая не помещается */
+  text-overflow: ellipsis; /* Добавление многоточия в конце обрезанного текста */
+}
+
+.custom-container {
+  border-radius: 10px; /* Радиус скругления углов */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет тени */
+  padding: 10px; /* Дополнительный отступ внутри контейнера, чтобы содержимое не примыкало к рамке */
+  margin-bottom: 20px;
+}
+
+.custom-margin {
+  margin-bottom: 25px;
+}
+
+.login-form-container {
+  border-radius: 10px; /* Радиус скругления углов */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет тени */
+  padding: 35px; /* Дополнительный отступ внутри контейнера, чтобы содержимое не примыкало к рамке */
+  height: 500px;
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.sign-up-form-container {
+  border-radius: 10px; /* Радиус скругления углов */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет тени */
+  padding: 35px; /* Дополнительный отступ внутри контейнера, чтобы содержимое не примыкало к рамке */
+  height: 670px;
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.forgot-password-container {
+  border-radius: 10px; /* Радиус скругления углов */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет тени */
+  padding: 35px; /* Дополнительный отступ внутри контейнера, чтобы содержимое не примыкало к рамке */
+  height: 270px;
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.wide-input {
+  width: 100%; /* Ширина поля ввода равна 100% от ширины родительского элемента */
+}
+
+.notice-container {
+  background-color: #FEFCE8;
+  text-align: center;
+  height: 50px;
+}
+
+.login-button {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+/*стили для пагинации страниц*/
+.pagination > li > a
+{
+  background-color: white;
+  color: grey;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: grey;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > a {
+  color: white;
+  background-color: darkorange;
+  border: solid 1px grey;
+}
+
+.pagination > .active > a:hover {
+  background-color: darkorange;
+  border: solid 1px grey;
+}
+
+.custom-color {
+  background-color: orange;
+  color: white;
+}
+
+.custom-color:hover {
+  background-color: darkorange;
+  color: white;
+}
+
+.resume-container {
+  border-radius: 10px; /* Радиус скругления углов */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет тени */
+  padding: 35px; /* Дополнительный отступ внутри контейнера, чтобы содержимое не примыкало к рамке */
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.resume-container-2 {
+  border-radius: 10px; /* Радиус скругления углов */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет тени */
+  padding: 35px; /* Дополнительный отступ внутри контейнера, чтобы содержимое не примыкало к рамке */
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+select {
+  appearance: auto; /* Или appearance: initial; */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  min-height: calc(100% - 60px); /* Высота всего экрана минус высота футера */
+}
+
+footer {
+  height: 60px; /* Задаем высоту футера */
+  text-align: center;
+  padding: 10px;
+}
+
+.resizable {
+  resize: vertical; /* Позволяет изменять размер элемента по вертикали */
+  overflow: auto; /* Обеспечивает появление полос прокрутки, если содержимое textarea больше, чем размер элемента */
+  max-height: 500px;
+}
+
+.badge {
+  padding: 0.5rem 1rem; /* Измените значения padding по вашему усмотрению */
+  font-size: 1.1rem; /* Измените размер шрифта по вашему усмотрению */
+  /* text-decoration: none; */
+}
