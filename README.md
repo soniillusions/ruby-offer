@@ -1,5 +1,5 @@
 # ruby-offer
-A job board where you can find Ruby and Rails jobs and post your resume.
+A job board where you can find Ruby on Rails jobs and post your resume.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/af8f9574-0322-4ae1-bb07-4d3817aafa81">
