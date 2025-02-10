@@ -7,7 +7,7 @@ A job board where you can find Ruby and Rails jobs and post your resume.
 
 Users can customize their resume:
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/c6fe4be9-282a-43d6-a509-ed4af3067db4">
+  <img src="https://github.com/user-attachments/assets/84d3ea59-3dd0-42d2-b254-264c26dae3d5">
 </p>
 
 ## Installation
