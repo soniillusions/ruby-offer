@@ -18,6 +18,12 @@ Ensure you have Ruby and Bundler installed. Then, install the required gems:
 bundle install
 ```
 
+Install JavaScript dependencies:
+
+```sh
+yarn install
+```
+
 Set up the database:
 
 ```sh
